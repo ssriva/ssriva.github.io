@@ -98,7 +98,7 @@
       EMAIL: "ssrivastava@cs.unc.edu",
       LOCATION: "Chapel Hill, NC",
       LAB_URL: "https://l3-unc.github.io/",
-      SCHOLAR_URL: "#",
+      SCHOLAR_URL: "https://scholar.google.com/citations?user=-vKI5s0AAAAJ&hl=en",
 
       // Hero images
       PHOTO_PORTRAIT: "./headshot.jpg",
@@ -135,7 +135,7 @@
 
       NEWS: [
         { date: "Dec 2025", text: "Upcoming invited talk at National Institute for Environmental Health Science (NIEHS)"},
-        { date: "Sep 2025", text: "4 Papers from L³ lab to appear at EMNLP 2025." },
+        { date: "Sep 2025", text: "Four papers from L³ lab to appear at EMNLP 2025." },
         { date: "Apr 2025", text: "Shashank is Ethics-chair for EMNLP 2025." }
       ],
 
@@ -221,6 +221,7 @@
         { title: "Identifying Metaphorical Word Use with Tree Kernels", authors: "D. Hovy, S. Srivastava, S. K. Jauhar, M. Sachan, K. Goyal, H. Li, E. Hovy", venue: "Meta4NLP @ NAACL 2013 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-metaphor.pdf" },
         { title: "A Structured distributional semantic model: Integrating structure with semantics", authors: "K. Goyal*, S. K. Jauhar*, H. Li*, M. Sachan*, S. Srivastava*, E. Hovy", venue: "CVSC @ ACL 2013 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-sdsmWorkshop.pdf" },
         { title: "A Topical Graph Kernel for Link Prediction", authors: "S. Chaturvedi, H. Daumé, T. Moon, S. Srivastava", venue: "MLG @ ICML 2012 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-graphkernel.pdf" },
+        { title: "Evolution of Compositional Languages in Multiple Agent Social Communities", authors: "S. Srivastava", venue: "MTech Thesis, IIT Kanpur, 2010", href: "https://www.cs.cmu.edu/~shashans/papers/srivastava-evolution.pdf" },
       ],
 
       ABOUT: "I am an Assistant Professor at UNC Chapel Hill, where I lead the Learning from Language Lab (L³). Earlier, I was a researcher at Microsoft Research in Redmond and previously got a PhD in Machine Learning working with Tom Mitchell at Carnegie Mellon. My work explores the connection between natural language, machine intelligence, and interaction. My lab focuses on AI explainability, alignment, and interactive learning in large language models."
@@ -307,7 +308,7 @@
         <button id="togglePubsBtn" class="inline-block text-sm rounded-xl px-3 py-1.5 bg-slate-900 text-white hover:bg-slate-800">
           Show more
         </button>
-        <a id="pubScholarLink" href="#" class="text-sm underline text-slate-700 hover:text-slate-900">Full list / Google Scholar</a>
+        
       </div>
     </div>
   </section>
@@ -577,7 +578,7 @@
     document.getElementById("labLink").href = CONFIG.LAB_URL;
     document.getElementById("locationText").textContent = CONFIG.LOCATION;
     document.getElementById("copyright").innerHTML =
-      "© " + new Date().getFullYear() + " " + CONFIG.NAME + ". Built with Tailwind. View lab: <a class='underline' href='" + CONFIG.LAB_URL + "'>l3-unc.github.io</a>";
+      "© " + new Date().getFullYear() + " " + CONFIG.NAME + ".";
   </script>
 </body>
 </html>
