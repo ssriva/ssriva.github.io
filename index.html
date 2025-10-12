@@ -1,10 +1,583 @@
 <!DOCTYPE html>
-<html>
-   <head>
-      <title>Shashank's Website</title>
-      <meta http-equiv = "refresh" content = "2; url = https://www.ssriva.com" />
-   </head>
-   <body>
-      <p>Redirecting ...</p>
-   </body>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Primary SEO -->
+  <title>Shashank Srivastava</title>
+  <meta name="description"
+        content="Assistant Professor at UNC Chapel Hill. Research: interactive learning for LLMs, explanation & alignment, and socially aware NLP." />
+  <link rel="canonical" href="https://www.ssriva.com/" />
+
+  <!-- Open Graph (Facebook/LinkedIn/Slack) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Shashank Srivastava — UNC Computer Science" />
+  <meta property="og:description"
+        content="Interactive learning for LLMs, explanation & alignment, and socially aware NLP." />
+  <meta property="og:url" content="https://www.ssriva.com/" />
+  <meta property="og:image" content="https://www.ssriva.com/assets/img/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name" content="Shashank Srivastava" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shashank Srivastava — UNC Computer Science" />
+  <meta name="twitter:description"
+        content="Interactive learning for LLMs, explanation & alignment, and socially aware NLP." />
+  <meta name="twitter:image" content="https://www.ssriva.com/assets/img/og-card.jpg" />
+  <meta name="twitter:site" content="@YourHandle" />  <!-- optional -->
+  <meta name="twitter:creator" content="@YourHandle" /> <!-- optional -->
+
+  <!-- Favicons / PWA-ish basics (optional but nice) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Robots (safe default). If you stage drafts, change to 'noindex' there only -->
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+
+  <!-- Preconnects (micro perf) -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+
+  <!-- Schema.org JSON-LD: Person + Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Shashank Srivastava",
+        "jobTitle": "Assistant Professor of Computer Science",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "University of North Carolina at Chapel Hill"
+        },
+        "description": "Research: interactive learning for LLMs, explanation & alignment, socially aware NLP.",
+        "email": "mailto:ssrivastava@cs.unc.edu",
+        "image": "https://www.ssriva.com/headshot.jpg",
+        "url": "https://www.ssriva.com/",
+        "sameAs": [
+          "https://l3-unc.github.io/",
+          "https://scholar.google.com/citations?user=-vKI5s0AAAAJ&hl=en" ,
+          "https://github.com/...",
+          "https://x.com/..."
+        ],
+        "alumniOf": [
+          {"@type": "CollegeOrUniversity", "name": "Carnegie Mellon University"}
+        ],
+        "worksFor": {"@type": "CollegeOrUniversity", "name": "UNC Chapel Hill"}
+      },
+      {
+        "@type": "WebSite",
+        "name": "Shashank Srivastava — UNC CS",
+        "url": "https://www.ssriva.com/",
+        "publisher": {"@type": "Person", "name": "Shashank Srivastava"},
+        "inLanguage": "en"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="bg-white text-slate-900">
+  <script>
+    // --- CONFIG: personalize here ---
+    const CONFIG = {
+      NAME: "Shashank Srivastava",
+      TITLE: "Assistant Professor of Computer Science, UNC Chapel Hill",
+      EMAIL: "ssrivastava@cs.unc.edu",
+      LOCATION: "Chapel Hill, NC",
+      LAB_URL: "https://l3-unc.github.io/",
+      SCHOLAR_URL: "#",
+
+      // Hero images
+      PHOTO_PORTRAIT: "./headshot.jpg",
+      PHOTO_SPEAKING: "./chatgpt.png",
+
+      PILLARS: [
+        {
+          title: "Language, intelligence and Interactivity",
+          blurb: "Language based supervision; Understanding CoT; Models that learn by asking,",
+          links: [
+            { label: "INTERACT", href: "https://aclanthology.org/2025.acl-long.441.pdf" },
+            { label: "CLUES", href: "https://clues-benchmark.github.io/" },
+            { label: "LNL", href: "https://aclanthology.org/D17-1161.pdf"}
+          ],
+        },
+        {
+          title: "Explanation & Alignment",
+          blurb: "Practical explanation systems; Explanation faithfulness; Steering & auditing model behavior.",
+          links: [
+            { label: "MaNtLe", href: "https://aclanthology.org/2023.emnlp-main.832.pdf" },
+            { label: "DISCERN", href: "https://aclanthology.org/2024.emnlp-main.1091.pdf" },
+            { label: "CausalDiagnosticity", href: "https://arxiv.org/pdf/2502.18848" }
+          ],
+        },
+        {
+          title: "Social & Cognitive Applications",
+          blurb: "Language coordination; LLM personality dynamics; Social simulations, etc..",
+          links: [
+            { label: "ChameleonLLMs", href: "#" },
+            { label: "ShesPrEPared", href: "https://www.unc.edu/posts/2024/09/24/chatbot-informs-women-about-hiv-prevention/" }
+          ],
+        },
+      ],
+
+      NEWS: [
+        { date: "Dec 2025", text: "Upcoming invited talk at National Institute for Environmental Health Science (NIEHS)"},
+        { date: "Sep 2025", text: "4 Papers from L³ lab to appear at EMNLP 2025." },
+        { date: "Apr 2025", text: "Shashank is Ethics-chair for EMNLP 2025." }
+      ],
+
+      // --- Publications (ALL, with authors) ---
+      // Source: latest CV (Conferences/Journals + Workshops/Thesis)
+      PUBLICATIONS: [
+        // 2025
+        { title: "A Causal Lens for Evaluating Faithfulness Metrics", authors: "K. Zaman, S. Srivastava", venue: "EMNLP 2025", href: "https://arxiv.org/pdf/2502.18848" },
+        { title: "Large Language Models Threaten Language’s Epistemic and Communicative Foundations", authors: "S. Srivastava", venue: "EMNLP 2025", href: "#" },
+        { title: "Chameleon LLMs: User Personas Influence Chatbot Personality Shifts", authors: "J. Xing, T. Niu, S. Srivastava", venue: "EMNLP 2025", href: "#" },
+        { title: "INTERACT: Enabling Interactive, Question-Driven Learning in Large Language Models", authors: "A. Kendapadi, K. Zaman, R. R. Menon, S. Srivastava", venue: "ACL 2025", href: "https://aclanthology.org/2025.acl-long.441.pdf" },
+        { title: "Classifying Unreliable Narrators with Large Language Models", authors: "A. Brei, K. Henry, A. Sharma, S. Srivastava, S. Chaturvedi", venue: "ACL 2025", href: "https://aclanthology.org/2025.acl-long.1013.pdf" },
+        { title: "FISQL: Enhancing Text-to-SQL systems with Rich Interactive Feedback", authors: "R. R. Menon, K. Qian, L. Chen, I. Joshi, D. Pandyan, J. Harrison, S. Srivastava, Y. Li", venue: "EDBT 2025 (Industry Track)", href: "https://www.openproceedings.org/2025/conf/edbt/paper-300.pdf" },
+
+        // 2024
+        { title: "DISCERN: Decoding Systematic Errors in Natural Language for Text Classifiers", authors: "R. R. Menon, S. Srivastava", venue: "EMNLP 2024", href: "https://aclanthology.org/2024.emnlp-main.1091.pdf" },
+        { title: "Fuse to Forget: Bias Reduction and Selective Memorization through Model Fusion", authors: "K. Zaman, L. Chosen, S. Srivastava", venue: "EMNLP 2024", href: "https://aclanthology.org/2024.emnlp-main.1045.pdf" },
+        { title: "SocialGaze: Improving the Integration of Human Social Norms in Large Language Models", authors: "A. R. Vijjini, R. R. Menon, S. Srivastava, S. Chaturvedi", venue: "Findings of EMNLP 2024", href: "#" },
+        { title: "Online Reinforcement Learning-Based Pedagogical Planning for Narrative-Centered Learning Environments", authors: "F. M. Fahid, J. Rowe, Y. Kim, S. Srivastava, J. Lester", venue: "AAAI 2024", href: "https://ojs.aaai.org/index.php/AAAI/article/view/30365" },
+
+        // 2023
+        { title: "MaNtLE: Model-agnostic Natural Language Explainer", authors: "R. R. Menon, K. Zaman, S. Srivastava", venue: "EMNLP 2023", href: "https://aclanthology.org/2023.emnlp-main.832.pdf" },
+        { title: "Pragmatic Reasoning Unlocks Quantifier Semantics for Foundation Models", authors: "Y. Li, R. R. Menon, S. Ghosh, S. Srivastava", venue: "EMNLP 2023", href: "https://aclanthology.org/2023.emnlp-main.38.pdf" },
+        { title: "Manipulating the Perceived Personality Traits of Language Models", authors: "G. Caron, S. Srivastava", venue: "Findings of EMNLP 2023", href: "https://aclanthology.org/2023.findings-emnlp.156.pdf" },
+        { title: "Leveraging Multiple Teachers for Test-Time Adaptation of Language-Guided Classifiers", authors: "K. Wei, S. Ghosh, R. R. Menon, S. Srivastava", venue: "Findings of EMNLP 2023", href: "https://aclanthology.org/2023.findings-emnlp.471.pdf" },
+        { title: "Beyond Labels: Empowering Human Annotators with Natural Language Explanations through a Novel Active-Learning Architecture", authors: "B. Yao, I. Jindal, L. Popa, Y. Katsis, S. Ghosh, L. He, Y. Lu, S. Srivastava, Y. Li, J. Hendler, D. Wang", venue: "Findings of EMNLP 2023", href: "https://aclanthology.org/2023.findings-emnlp.778.pdf" },
+        { title: "LaSQuE: Improved Zero-Shot Classification from Explanations Through Quantifier Modeling and Curriculum Learning", authors: "S. Ghosh, R. R. Menon, S. Srivastava", venue: "Findings of ACL 2023", href: "https://aclanthology.org/2023.findings-acl.467.pdf" },
+        { title: "Beyond the Imitation Game: Quantifying and Extrapolating the Capabilities of Language Models", authors: "A. Srivastava et al.", venue: "TMLR 2023", href: "https://openreview.net/pdf?id=uyTL5Bvosj" },
+
+        // 2022
+        { title: "CLUES: A Benchmark for Learning Classifiers using Natural Language Explanations", authors: "R. R. Menon*, S. Ghosh*, S. Srivastava", venue: "ACL 2022", href: "https://aclanthology.org/2022.acl-long.451.pdf" },
+        { title: "ePiC: Employing Proverbs in Context as a Benchmark for Abstract Language Understanding", authors: "S. Ghosh, S. Srivastava", venue: "ACL 2022", href: "https://aclanthology.org/2022.acl-long.276.pdf" },
+        { title: "Predicting Difficulty and Discrimination of Natural Language Questions with Item Response Theory", authors: "M. Byrd, S. Srivastava", venue: "ACL 2022 (short)", href: "https://aclanthology.org/2022.acl-short.15.pdf" },
+        { title: "What do Large Language Models learn Beyond Language?", authors: "A. Madasu, S. Srivastava", venue: "Findings of EMNLP 2022", href: "https://aclanthology.org/2022.findings-emnlp.516.pdf" },
+
+        // 2021
+        { title: "Mapping Language to Programs using Multiple Reward Components with Inverse Reinforcement Learning", authors: "S. Ghosh, S. Srivastava", venue: "Findings of EMNLP 2021", href: "https://arxiv.org/pdf/2110.00842.pdf" },
+        { title: "Adversarial Scrubbing of Demographic Information for Text Classification", authors: "S. Chowdhury, S. Ghosh, Y. Li, J. Oliva, S. Srivastava, S. Chaturvedi", venue: "EMNLP 2021", href: "https://aclanthology.org/2021.emnlp-main.725.pdf" },
+        { title: "Does Social Pressure Drive Persuasion in Online Fora?", authors: "A. Bansal, S. Srivastava", venue: "EMNLP 2021", href: "https://aclanthology.org/" },
+        { title: "Improving and Simplifying Pattern Exploiting Training", authors: "D. Tam*, R. R. Menon*, M. Bansal, S. Srivastava, C. Raffel", venue: "EMNLP 2021", href: "https://arxiv.org/pdf/2103.11955.pdf" },
+        { title: "How Helpful is Inverse Reinforcement Learning for Table-to-Text Generation?", authors: "S. Ghosh*, Z. Qi*, S. Chaturvedi, S. Srivastava", venue: "ACL 2021 (short)", href: "https://aclanthology.org/2021.acl-short.11.pdf" },
+
+        // 2020
+        { title: "Learning Web-based Procedures by Reasoning over Explanations and Demonstrations in Context", authors: "S. Srivastava, A. Polozov, N. Jojic, C. Meek", venue: "ACL 2020", href: "https://www.aclweb.org/anthology/2020.acl-main.684.pdf" },
+        { title: "PRover: Proof Generation for Interpretable Reasoning over Rules", authors: "S. Saha, S. Ghosh, S. Srivastava, M. Bansal", venue: "EMNLP 2020", href: "https://www.aclweb.org/anthology/2020.emnlp-main.9.pdf" },
+        { title: "An Agent for Learning and Executing Natural Language Commands", authors: "A. Azaria, S. Srivastava, J. Krishnamurthy, I. Labutov, T. Mitchell", venue: "AAMAS 2020", href: "https://link.springer.com/article/10.1007/s10458-019-09425-x" },
+
+        // 2019
+        { title: "Learning to Ask for Conversational Machine Learning", authors: "S. Srivastava, I. Labutov, T. Mitchell", venue: "EMNLP 2019", href: "https://www.aclweb.org/anthology/D19-1426.pdf" },
+
+        // 2018
+        { title: "Teaching Machines to Classify from Natural Language Interactions", authors: "S. Srivastava", venue: " PhD Dissertation, 2018", href: "https://www.cs.cmu.edu/~shashans/papers/srivastava-thesis.pdf" },
+        { title: "A Spatial Model for Extracting and Visualizing Latent Discourse Structure in Text", authors: "S. Srivastava, N. Jojic", venue: "ACL 2018", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava18-spatial.pdf" },
+        { title: "Zero-shot Learning of Classifiers from Natural Language Quantification", authors: "S. Srivastava, I. Labutov, T. Mitchell", venue: "ACL 2018", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava18-lnq.pdf" },
+        { title: "LIA: A natural language programmable personal assistant (System Demo)", authors: "I. Labutov, S. Srivastava, T. Mitchell", venue: "EMNLP 2018 (Demo)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava18-LiA.pdf" },
+        { title: "Where have I heard this story before? Identifying Narrative Similarity in Movie Remakes", authors: "S. Chaturvedi, S. Srivastava, D. Roth", venue: "NAACL 2018 (short)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava18-remakes.pdf" },
+
+        // 2017
+        { title: "Joint Semantic Parsing and Concept Learning from Natural Language Explanations", authors: "S. Srivastava, I. Labutov, T. Mitchell", venue: "EMNLP 2017", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava17-jointLNL.pdf" },
+        { title: "Parsing Natural Language Conversations using Contextual Cues", authors: "S. Srivastava, A. Azaria, T. Mitchell", venue: "IJCAI 2017", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava17-conversations.pdf" },
+
+        // 2016
+        { title: "Inferring interpersonal relationships in narrative text", authors: "S. Srivastava, S. Chaturvedi, T. Mitchell", venue: "AAAI 2016", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava16-inferring.pdf" },
+        { title: "Modeling Evolving Relationships Between Characters in Literary Novels", authors: "S. Chaturvedi, S. Srivastava, H. Daumé, C. Dyer", venue: "AAAI 2016", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava16-evolving.pdf" },
+        { title: "CMU-MLMicro-Reader System for KBP 2016 Cold Start Slot Filling, Event Nugget Detection, and Event Argument Linking", authors: "B. Yang, N. Nakashole, B. Kisiel, E. A. Platanios, A. Saparov, S. Srivastava, D. Wijaya, T. Mitchell", venue: "TAC 2016", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava16-KBP.pdf" },
+
+        // 2015
+        { title: "CMU-ML system for KBP 2015 Cold Start Slot Filling", authors: "B. Kisiel, B. McDowell, M. Gardner, N. Nakashole, E. A. Platanios, A. Saparov, S. Srivastava, D. Wijaya, T. Mitchell", venue: "TAC 2015", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava15-KBP.pdf" },
+
+        // 2014
+        { title: "Vector Space Semantics with Frequency-driven Motifs", authors: "S. Srivastava, E. Hovy", venue: "ACL 2014", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava14-motifs.pdf" },
+        { title: "Spatial Compactness meets Topical Consistency: Jointly modeling Links and Content for Community Detection", authors: "M. Sachan, A. Dubey, S. Srivastava, E. P. Xing, E. Hovy", venue: "WSDM 2014", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava14-community.pdf" },
+
+        // 2013
+        { title: "A Walk-based Semantically Enriched Tree Kernel Over Distributed Word Representations", authors: "S. Srivastava, D. Hovy, E. Hovy", venue: "EMNLP 2013 (short)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-treekernel.pdf" },
+        { title: "Collective Matrix Factorization for Co-clustering", authors: "M. Sachan, S. Srivastava", venue: "WWW Companion 2013", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-coclustering.pdf" },
+        { title: "A Structured Distributional Semantic Model for Event Coreference", authors: "K. Goyal*, S. K. Jauhar*, H. Li*, M. Sachan*, S. Srivastava*, E. Hovy", venue: "ACL 2013 (short)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-sdsm.pdf" },
+
+        // Workshops / Thesis
+        { title: "Compositional Generalization for Kinship Prediction through Data Augmentation", authors: "K. Wei, S. Ghosh, S. Srivastava", venue: "WNU @ NAACL 2022 (Workshop)", href: "https://aclanthology.org/2022.wnu-1.2.pdf" },
+        { title: "Teaching Machines to Classify from Natural Language Interactions", authors: "S. Srivastava", venue: "PhD Thesis, CMU 2018", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava-thesis.pdf" },
+        { title: "Learning Classifiers from Declarative Language", authors: "S. Srivastava, I. Labutov, T. Mitchell", venue: "NIPS 2017 Workshop (Learning from Limited Data)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava17-lldworkshop.pdf" },
+        { title: "Identifying Metaphorical Word Use with Tree Kernels", authors: "D. Hovy, S. Srivastava, S. K. Jauhar, M. Sachan, K. Goyal, H. Li, E. Hovy", venue: "Meta4NLP @ NAACL 2013 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-metaphor.pdf" },
+        { title: "A Structured distributional semantic model: Integrating structure with semantics", authors: "K. Goyal*, S. K. Jauhar*, H. Li*, M. Sachan*, S. Srivastava*, E. Hovy", venue: "CVSC @ ACL 2013 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-sdsmWorkshop.pdf" },
+        { title: "A Topical Graph Kernel for Link Prediction", authors: "S. Chaturvedi, H. Daumé, T. Moon, S. Srivastava", venue: "MLG @ ICML 2012 (Workshop)", href: "http://www.cs.cmu.edu/~shashans/papers/srivastava13-graphkernel.pdf" },
+      ],
+
+      ABOUT: "I am an Assistant Professor at UNC Chapel Hill, where I lead the Learning from Language Lab (L³). Earlier, I was a researcher at Microsoft Research in Redmond and previously got a PhD in Machine Learning working with Tom Mitchell at Carnegie Mellon. My work explores the connection between natural language, machine intelligence, and interaction. My lab focuses on AI explainability, alignment, and interactive learning in large language models."
+    };
+  </script>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/80 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <a href="#" class="font-semibold text-slate-900 hover:text-slate-900" id="brand"></a>
+      <nav class="hidden md:flex gap-6 text-sm">
+        <a href="#pillars" class="hover:text-slate-800">Research</a>
+        <a href="#news" class="hover:text-slate-800">News</a>
+        <a href="#publications" class="hover:text-slate-800">Publications</a>
+        <a href="#for-students" class="hover:text-slate-800">For Students</a>
+        <a href="#teaching" class="hover:text-slate-800">Teaching</a>
+        <a href="#contact" class="hover:text-slate-800">Contact</a>
+      </nav>
+      <a href="#" id="labBtn" class="text-sm rounded-xl px-3 py-1.5 bg-slate-900 text-white hover:bg-slate-800">
+        L³ Lab ↗
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 py-16 md:py-24 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight" id="name"></h1>
+        <p class="mt-2 text-base md:text-lg text-slate-600" id="title"></p>
+        <p class="mt-4 text-slate-700 leading-relaxed" id="aboutText"></p>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <a href="#for-students" class="rounded-2xl px-4 py-2 border border-slate-300 text-slate-800 text-sm md:text-base hover:bg-slate-50">
+            Prospective students?
+          </a>
+        </div>
+      </div>
+      <div class="md:justify-self-end" id="heroPhoto"></div>
+    </div>
+  </section>
+
+  <!-- Pillars -->
+  <section id="pillars" class="py-12 md:py-16 bg-[linear-gradient(180deg,rgba(248,250,252,0.6),rgba(255,255,255,0.6))] border-t border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">What I work on</h2>
+      <p class="mt-2 text-slate-600 max-w-2xl">
+        Three thrusts connect my research: language & intelligence; explanation & alignment; and interesting LLM applications, especially with a social or cognitive bent.
+      </p>
+      <div class="mt-8 grid md:grid-cols-3 gap-6" id="pillarCards"></div>
+    </div>
+  </section>
+
+  <!-- News -->
+  <section id="news" class="py-12 md:py-16 bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">News</h2>
+      <ul class="mt-6 grid md:grid-cols-3 gap-6" id="newsList"></ul>
+    </div>
+  </section>
+
+
+
+  <!-- Publications -->
+  <section id="publications" class="py-12 md:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2
+        id="pubHeading"
+        class="text-2xl md:text-3xl font-bold flex items-center gap-2 cursor-pointer select-none"
+        role="button"
+        aria-controls="pubWrapper"
+        aria-expanded="false"
+        tabindex="0"
+        title="Click to expand/collapse"
+      >
+        Recent Publications
+        <span id="pubCaret" class="text-slate-500 text-base transition-transform">▾</span>
+      </h2>
+
+      <div id="pubWrapper" class="mt-6 overflow-hidden transition-all duration-500 ease-in-out">
+        <ul class="space-y-4" id="pubList"></ul>
+      </div>
+
+      <div class="mt-6 flex items-center gap-3">
+        <button id="togglePubsBtn" class="inline-block text-sm rounded-xl px-3 py-1.5 bg-slate-900 text-white hover:bg-slate-800">
+          Show more
+        </button>
+        <a id="pubScholarLink" href="#" class="text-sm underline text-slate-700 hover:text-slate-900">Full list / Google Scholar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Students -->
+  <section id="for-students" class="py-12 md:py-16">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">For prospective students</h2>
+      <div class="mt-3 text-slate-600 max-w-3xl">
+        <p>I welcome applications from motivated PhD, MS, and undergraduate students who are excited about language and learning. Interested in joining our lab?</p>
+
+        <a href="https://forms.gle/NwxAUyT1vMxuq8U8A" target="_blank" rel="noreferrer" class="ml-3 mt-6 inline-block text-sm rounded-xl px-3 py-1.5 bg-slate-900 text-white hover:bg-slate-800">
+          Please fill this interest form ↗
+        </a>
+
+        <p class="mt-4">You don't need to email me separately.</p>
+      </div>
+
+      <div class="mt-6 grid md:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="font-semibold">What I look for</div>
+          <div class="text-sm text-slate-600 mt-1">Strong fundamentals (ML/math/programming), mutual interest, curiosity.</div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-4">
+          <div class="font-semibold">Applying to UNC CS PhD?</div>
+          <div class="text-sm text-slate-600 mt-1">Mention my lab in your application.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Teaching (simple list) -->
+  <section id="teaching" class="py-12 md:py-16 bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Teaching</h2>
+      <ul class="mt-6 space-y-3 text-slate-700">
+        <li><span class="font-medium">Fall 2025</span> — COMP 664: Deep Learning</li>
+        <li><span class="font-medium">Spring 2025</span> — COMP 790: Using LLMs to Create Software</li>
+        <li><span class="font-medium">Fall 2024</span> — COMP 664: Deep Learning</li>
+        <li><span class="font-medium">Spring 2024</span> — COMP 560: Artificial Intelligence</li>
+        <li><span class="font-medium">Spring 2023</span> — COMP 590: Natural Language Processing</li>
+        <li><span class="font-medium">Fall 2022</span> — COMP 790/590: Deep Structured Prediction &amp; Graphical Models</li>
+        <li><span class="font-medium">Spring 2022</span> — COMP 790: Language &amp; Learning Seminar (special topics)</li>
+        <li><span class="font-medium">Fall 2021</span> — COMP 790/590: Structured Prediction</li>
+        <li><span class="font-medium">Spring 2021</span> — COMP 790: Neuro-symbolic Methods Seminar</li>
+        <li><span class="font-medium">Fall 2020</span> — COMP 790/590: Grounded NLP Seminar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-12 md:py-16">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Get in touch</h2>
+      <div class="mt-4 grid md:grid-cols-3 gap-6">
+        <div class="rounded-3xl border border-slate-200 p-6">
+          <div class="text-sm text-slate-500">Email</div>
+          <a class="font-medium" id="emailLink"></a>
+        </div>
+        <div class="rounded-3xl border border-slate-200 p-6">
+          <div class="text-sm text-slate-500">Lab</div>
+          <a class="font-medium" id="labLink" target="_blank" rel="noreferrer">l3-unc.github.io ↗</a>
+        </div>
+        <div class="rounded-3xl border border-slate-200 p-6">
+          <div class="text-sm text-slate-500">Location</div>
+          <div class="font-medium" id="locationText"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 text-sm text-slate-500 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div id="copyright"></div>
+      <div class="flex gap-4"></div>
+    </div>
+  </footer>
+
+  <!-- Personal essays (commented for later)
+  <section id="essays" class="py-12 md:py-16">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-end justify-between">
+        <h2 class="text-2xl md:3xl font-bold">Public essays</h2>
+        <a href="#" class="text-sm text-slate-600 hover:text-slate-800">All essays →</a>
+      </div>
+      <div class="mt-6 grid md:grid-cols-2 gap-6" id="essayCards"></div>
+    </div>
+  </section>
+  -->
+
+  <script>
+    // --- Basic header/hero wiring ---
+    document.getElementById("brand").textContent = CONFIG.NAME;
+    document.getElementById("labBtn").href = CONFIG.LAB_URL;
+    document.getElementById("name").textContent = CONFIG.NAME;
+    document.getElementById("title").textContent = CONFIG.TITLE;
+
+    // Random hero photo per load (speaking image is wide cinematic)
+    function photoNode() {
+      const isSpeaking = Math.random() < 0.70;
+      const fig = document.createElement("figure");
+      fig.className = "text-center md:justify-self-end";
+
+      const img = document.createElement("img");
+      img.alt = isSpeaking
+        ? "Shashank Srivastava speaking at a public AI event"
+        : "Portrait of Shashank Srivastava";
+
+      if (isSpeaking) {
+        img.src = CONFIG.PHOTO_SPEAKING;
+        img.className = "rounded-3xl shadow-md border border-slate-200 w-full max-w-[48rem] aspect-[16/9] object-cover mx-auto";
+      } else {
+        img.src = CONFIG.PHOTO_PORTRAIT;
+        img.className = "rounded-3xl shadow-md border border-slate-200 w-72 aspect-[3/4] object-cover mx-auto";
+      }
+      fig.appendChild(img);
+      return fig;
+    }
+    document.getElementById("heroPhoto").appendChild(photoNode());
+
+    // Pillars
+    const pc = document.getElementById("pillarCards");
+    CONFIG.PILLARS.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "rounded-3xl bg-white border border-slate-200 p-6 shadow-sm";
+      let links = (p.links || []).map(l =>
+        `<a href="${l.href}" class="text-sm rounded-xl px-3 py-1.5 bg-slate-900 text-white hover:bg-slate-800 mr-2">${l.label}</a>`
+      ).join("");
+      card.innerHTML = `<h3 class="text-lg font-semibold">${p.title}</h3>
+                        <p class="mt-2 text-sm text-slate-600">${p.blurb}</p>
+                        <div class="mt-4 flex flex-wrap gap-2">${links}</div>`;
+      pc.appendChild(card);
+    });
+
+    // News
+    const nl = document.getElementById("newsList");
+    CONFIG.NEWS.forEach(n => {
+      const li = document.createElement("li");
+      li.className = "rounded-3xl bg-white border border-slate-200 p-5";
+      li.innerHTML = `<div class="text-xs uppercase tracking-wide text-slate-500">${n.date}</div>
+                      <div class="mt-1 text-sm text-slate-800">${n.text}</div>`;
+      nl.appendChild(li);
+    });
+
+    // Publications (with authors)
+    const pl = document.getElementById("pubList");
+    CONFIG.PUBLICATIONS.forEach(p => {
+      const li = document.createElement("li");
+      li.className = "rounded-2xl bg-white border border-slate-200 p-4";
+      const safeHref = p.href && p.href !== "#" ? `href="${p.href}" target="_blank" rel="noreferrer"` : `href="#"`;
+      const authors = p.authors ? `<div class="text-sm text-slate-700">${p.authors}</div>` : "";
+      li.innerHTML = `<a ${safeHref} class="font-medium hover:underline">${p.title}</a>
+                      ${authors}
+                      <div class="text-sm text-slate-500">${p.venue}</div>`;
+      pl.appendChild(li);
+    });
+
+    const scholarLink = document.getElementById("pubScholarLink");
+    if (scholarLink && CONFIG.SCHOLAR_URL && CONFIG.SCHOLAR_URL !== "#") {
+      scholarLink.href = CONFIG.SCHOLAR_URL;
+    }
+
+    // Expandable Publications
+    (function () {
+      const wrapper = document.getElementById("pubWrapper");
+      const list = document.getElementById("pubList");
+      const btn = document.getElementById("togglePubsBtn");
+      const heading = document.getElementById("pubHeading");
+      const caret = document.getElementById("pubCaret");
+      if (!wrapper || !list || !btn || !heading || !caret) return;
+
+      const items = Array.from(list.children);
+      const cutoff = 8; // show first N items, then expand
+      let expanded = false;
+
+      const hideExtras = () => items.slice(cutoff).forEach(li => { li.style.display = "none"; });
+      const showExtras = () => items.slice(cutoff).forEach(li => { li.style.display = ""; });
+
+      function collapsedHeightPx() {
+        hideExtras();
+        void list.offsetHeight;
+        return list.offsetHeight;
+      }
+
+      if (items.length <= cutoff) {
+        btn.style.display = "none";
+        heading.setAttribute("aria-expanded", "true");
+        caret.style.display = "none";
+        return;
+      }
+
+      // INIT collapsed
+      hideExtras();
+      wrapper.style.maxHeight = collapsedHeightPx() + "px";
+      heading.setAttribute("aria-expanded", "false");
+      caret.style.transform = "rotate(0deg)";
+
+      items.slice(cutoff).forEach(li => {
+        li.style.opacity = "0";
+        li.style.transform = "translateY(4px)";
+        li.style.transition = "opacity 220ms ease, transform 220ms ease";
+      });
+
+      function expand() {
+        expanded = true;
+        wrapper.style.maxHeight = wrapper.offsetHeight + "px";
+        showExtras();
+        requestAnimationFrame(() => {
+          wrapper.style.maxHeight = list.scrollHeight + "px";
+          btn.textContent = "Show less";
+          heading.setAttribute("aria-expanded", "true");
+          caret.style.transform = "rotate(180deg)";
+          requestAnimationFrame(() => {
+            items.slice(cutoff).forEach(li => {
+              li.style.opacity = "1";
+              li.style.transform = "translateY(0)";
+            });
+          });
+        });
+      }
+
+      function collapse() {
+        expanded = false;
+        wrapper.style.maxHeight = collapsedHeightPx() + "px";
+        btn.textContent = "Show more";
+        heading.setAttribute("aria-expanded", "false");
+        caret.style.transform = "rotate(0deg)";
+
+        const onEnd = (e) => {
+          if (e.target !== wrapper) return;
+          wrapper.removeEventListener("transitionend", onEnd);
+          hideExtras();
+          items.slice(cutoff).forEach(li => {
+            li.style.opacity = "0";
+            li.style.transform = "translateY(4px)";
+          });
+        };
+        wrapper.addEventListener("transitionend", onEnd);
+
+        wrapper.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      const toggle = () => (expanded ? collapse() : expand());
+      btn.addEventListener("click", toggle);
+      heading.addEventListener("click", toggle);
+      heading.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+      });
+
+      window.addEventListener("resize", () => {
+        if (expanded) {
+          showExtras();
+          wrapper.style.maxHeight = list.scrollHeight + "px";
+        } else {
+          hideExtras();
+          wrapper.style.maxHeight = collapsedHeightPx() + "px";
+        }
+      });
+    })();
+
+    // Contact/footer
+    document.getElementById("aboutText").textContent = CONFIG.ABOUT;
+    const emailLink = document.getElementById("emailLink");
+    emailLink.href = "mailto:" + CONFIG.EMAIL;
+    emailLink.textContent = CONFIG.EMAIL;
+    document.getElementById("labLink").href = CONFIG.LAB_URL;
+    document.getElementById("locationText").textContent = CONFIG.LOCATION;
+    document.getElementById("copyright").innerHTML =
+      "© " + new Date().getFullYear() + " " + CONFIG.NAME + ". Built with Tailwind. View lab: <a class='underline' href='" + CONFIG.LAB_URL + "'>l3-unc.github.io</a>";
+  </script>
+</body>
 </html>
