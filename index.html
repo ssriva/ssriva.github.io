@@ -8,10 +8,10 @@
   <!-- Primary SEO -->
   <title>Shashank Srivastava</title>
   <meta name="description"
-        content="Assistant Professor at UNC Chapel Hill. Research: interactive learning for LLMs, explanation & alignment, and socially aware NLP." />
+        content="Assistant Professor at UNC Chapel Hill. Research: human language and machine intelligence; AI explanation & alignment; social NLP." />
   <link rel="canonical" href="https://www.ssriva.com/" />
 
-  <!-- Open Graph (Facebook/LinkedIn/Slack) -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Shashank Srivastava — UNC Computer Science" />
   <meta property="og:description"
@@ -20,7 +20,10 @@
   <meta property="og:image" content="https://www.ssriva.com/assets/img/og-card.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Shashank Srivastava — portrait and research highlights" />
   <meta property="og:site_name" content="Shashank Srivastava" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:updated_time" content="2025-10-13T12:00:00-04:00" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -28,66 +31,98 @@
   <meta name="twitter:description"
         content="Interactive learning for LLMs, explanation & alignment, and socially aware NLP." />
   <meta name="twitter:image" content="https://www.ssriva.com/assets/img/og-card.jpg" />
-  <meta name="twitter:site" content="@YourHandle" />  <!-- optional -->
-  <meta name="twitter:creator" content="@YourHandle" /> <!-- optional -->
+  <meta name="twitter:image:alt" content="Shashank Srivastava — portrait and research highlights" />
+  <meta name="twitter:site" content="@shsriva" />
+  <meta name="twitter:creator" content="@shsriva" />
 
-  <!-- Favicons / PWA-ish basics (optional but nice) -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0f172a" />
 
-  <!-- Robots (safe default). If you stage drafts, change to 'noindex' there only -->
+  <!-- Robots -->
   <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
 
-  <!-- Preconnects (micro perf) -->
+  <!-- Preconnects -->
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-  </style>
+  <style>html { scroll-behavior: smooth; }</style>
 
-  <!-- Schema.org JSON-LD: Person + Website -->
+  <!-- Schema.org JSON-LD: Person + WebSite + WebPage -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@id": "https://www.ssriva.com/#me",
         "@type": "Person",
         "name": "Shashank Srivastava",
+        "givenName": "Shashank",
+        "familyName": "Srivastava",
         "jobTitle": "Assistant Professor of Computer Science",
         "affiliation": {
           "@type": "CollegeOrUniversity",
-          "name": "University of North Carolina at Chapel Hill"
+          "name": "University of North Carolina at Chapel Hill",
+          "url": "https://cs.unc.edu/"
         },
-        "description": "Research: interactive learning for LLMs, explanation & alignment, socially aware NLP.",
+        "description": "Assistant Professor at UNC Chapel Hill. Research: interactive learning for LLMs, explanation & alignment, and socially aware NLP.",
         "email": "mailto:ssrivastava@cs.unc.edu",
         "image": "https://www.ssriva.com/headshot.jpg",
         "url": "https://www.ssriva.com/",
         "sameAs": [
           "https://l3-unc.github.io/",
-          "https://scholar.google.com/citations?user=-vKI5s0AAAAJ&hl=en" ,
           "https://cs.unc.edu/person/shashank-srivastava/",
-          "https://github.com/ssriva/"
+          "https://scholar.google.com/citations?user=-vKI5s0AAAAJ&hl=en",
+          "https://github.com/ssriva/",
+          "https://www.semanticscholar.org/author/Shashank-Srivastava/2253588064",
+          "https://dblp.org/pid/126/1619.html",
+          "https://orcid.org/0000-0003-1733-347X"
         ],
         "alumniOf": [
-          {"@type": "CollegeOrUniversity", "name": "Carnegie Mellon University"}
+          {"@type": "CollegeOrUniversity", "name": "Carnegie Mellon University", "url": "https://www.cmu.edu/"},
+          {"@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Kanpur", "url": "https://www.iitk.ac.in/"}
         ],
-        "worksFor": {"@type": "CollegeOrUniversity", "name": "UNC Chapel Hill"}
+        "knowsAbout": [
+          "Natural Language Processing",
+          "Large Language Models",
+          "Interactive Learning",
+          "Explainability",
+          "AI Alignment",
+          "AI Safety"
+        ]
       },
       {
+        "@id": "https://www.ssriva.com/#website",
         "@type": "WebSite",
         "name": "Shashank Srivastava — UNC CS",
         "url": "https://www.ssriva.com/",
-        "publisher": {"@type": "Person", "name": "Shashank Srivastava"},
-        "inLanguage": "en"
+        "publisher": { "@id": "https://www.ssriva.com/#me" },
+        "inLanguage": "en",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.ssriva.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.ssriva.com/#webpage",
+        "url": "https://www.ssriva.com/",
+        "isPartOf": { "@id": "https://www.ssriva.com/#website" },
+        "about": { "@id": "https://www.ssriva.com/#me" },
+        "primaryImageOfPage": "https://www.ssriva.com/assets/img/og-card.jpg",
+        "inLanguage": "en",
+        "name": "Shashank Srivastava — UNC Computer Science",
+        "description": "Interactive learning for LLMs, explanation & alignment, and socially aware NLP."
       }
     ]
   }
   </script>
 </head>
+
 
 <body class="bg-white text-slate-900">
   <script>
