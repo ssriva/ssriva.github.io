@@ -172,6 +172,12 @@
         { date: "Jun 2025", text: "Ethics Chair, EMNLP 2025." }
       ],
 
+      // Writing: items with an empty href are not shown until a link is added
+      WRITING: [
+        { title: "Sleepless Night", href: "./sleepless-night.pdf" },
+        { title: "Language Models Threaten Language’s Communicative Foundations", href: "https://aclanthology.org/2025.emnlp-main.1457.pdf" }
+      ],
+
       // --- Publications (ALL, with authors) ---
       // Source: latest CV (Conferences/Journals + Workshops/Thesis)
       PUBLICATIONS: [
@@ -387,6 +393,14 @@
   </main>
 
 
+  <!-- Writing -->
+  <section id="writing" class="hidden pt-6 pb-10 md:pt-8 md:pb-12">
+    <div class="mx-auto max-w-7xl px-4">
+      <h2 class="text-2xl md:text-3xl font-bold">Writing</h2>
+      <ul class="mt-6 space-y-3" id="writingList"></ul>
+    </div>
+  </section>
+
   <!-- Personal essays (commented for later)
   <section id="essays" class="py-10 md:py-12">
     <div class="mx-auto max-w-7xl px-4">
@@ -576,6 +590,19 @@
       cv.href = CONFIG.CV_URL;
       document.getElementById("cvWrap").classList.remove("hidden");
     }
+
+    // Writing: plain list of links, hidden entirely if no item has a link yet
+    (function () {
+      const items = (CONFIG.WRITING || []).filter(w => w.href);
+      if (!items.length) return;
+      const ul = document.getElementById("writingList");
+      items.forEach(w => {
+        const li = document.createElement("li");
+        li.innerHTML = `<a href="${w.href}" target="_blank" rel="noreferrer" class="font-medium underline decoration-slate-300 underline-offset-2 hover:text-[#2457a6] hover:decoration-[#2457a6]">${w.title}</a>`;
+        ul.appendChild(li);
+      });
+      document.getElementById("writing").classList.remove("hidden");
+    })();
 
     // Teaching: show the most recent courses, expand for the rest
     (function () {
